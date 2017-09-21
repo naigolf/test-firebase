@@ -31,8 +31,8 @@
                         const datas = data.val();
                         elementOL.empty();
                         angular.forEach(datas, function(post, index) {
-                            console.log(' title ::==' + post.title + ' content ::==' + post.content);
-                            elementOL.append('<li> Title ::== ' + post.title + ' Content ::==' + post.content + '</li>');
+                            console.log(' title :' + post.title);
+                            elementOL.append('<li> MSG : ' + post.title+ '</li>');
                         })
                     })
                 }
@@ -47,7 +47,7 @@
     <body ng-app="firebaseApp">
         <div ng-controller="firebaseCtrl">
             <fieldset>
-                <legend>Poolsawat 's Blogs</legend>
+                <legend>Test firebase</legend>
                 <ol id="blogs">
                     <li></li>
                 </ol>
