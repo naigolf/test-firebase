@@ -30,6 +30,34 @@
   
   }
   
+  
+  
+  var request = new httpRequest();
+request.method = "GET";
+request.url = "api.anto.io/channel/get/VR0dLDzHUaQyGuFZ85sle4ej6c0Zt7ViXXJ6vQzW/alert/alert3";
+
+//create callback for success containing the response
+request.success = function(response)
+{
+    console.log(response);
+};
+
+//and a fail callback containing the error
+request.fail = function(error)
+{
+    console.log(error);
+};
+
+//and finally send it away
+request.send();
+  
+  
+  
+  
+  
+  
+  
+  
   setInterval(ShowClock,1000);
   </script>
   </body>
