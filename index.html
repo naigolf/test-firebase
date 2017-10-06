@@ -22,12 +22,12 @@
   };
   firebase.initializeApp(config);
                     firebase.initializeApp(config);
-                    firebaseRef = firebase.database().ref("blogs");
+                    firebaseRef = firebase.database().ref("number");
                 }
                 // สร้าง Function เพื่อเก็บ event ของ Firebase
                 this.eventFirebase = function() {
                     firebaseRef.on('value', function(data) {
-                        var elementOL = angular.element(document.getElementById('blogs'));
+                        var elementOL = angular.element(document.getElementById('number'));
                         console.log(data.val());
                         const datas = data.val();
                         elementOL.empty();
