@@ -13,13 +13,14 @@
                 // สร้าง Function เพื่อ init Firebase เข้ากับ app เรา
                 this.initFirebase = function() {
                     var config = {
-                          apiKey: "AIzaSyANmkiJivnSx_fhjq4O68espOtLHETzqco",
-                          authDomain: "test-firebase01.firebaseapp.com",
-                          databaseURL: "https://test-firebase01.firebaseio.com",
-                          projectId: "test-firebase01",
-                          storageBucket: "test-firebase01.appspot.com",
-                          messagingSenderId: "637029976092"
-                    };
+    apiKey: "AIzaSyANmkiJivnSx_fhjq4O68espOtLHETzqco",
+    authDomain: "test-firebase01.firebaseapp.com",
+    databaseURL: "https://test-firebase01.firebaseio.com",
+    projectId: "test-firebase01",
+    storageBucket: "test-firebase01.appspot.com",
+    messagingSenderId: "637029976092"
+  };
+  firebase.initializeApp(config);
                     firebase.initializeApp(config);
                     firebaseRef = firebase.database().ref("blogs");
                 }
