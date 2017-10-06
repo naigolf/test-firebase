@@ -1,50 +1,37 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8">
-        <title>Firebase คืออะไร เริ่มใช้งาน Firebase เบื้องต้น</title>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
-        <script>
-            // Initialize Firebase
-            var firebaseRef = {};
+      <title>Firebase</title>
+      
+      <script src="https://www.gstatic.com/firebasejs/3.0.2/firebase.js"></script>
+</head>
 
-            angular.module('firebaseApp', []).service('firebaseService', function() {
-                // สร้าง Function เพื่อ init Firebase เข้ากับ app เรา
-                this.initFirebase = function() {
-                    var config = {
-    apiKey: "AIzaSyANmkiJivnSx_fhjq4O68espOtLHETzqco",
-    authDomain: "test-firebase01.firebaseapp.com",
-    databaseURL: "https://test-firebase01.firebaseio.com",
-    projectId: "test-firebase01",
-    storageBucket: "test-firebase01.appspot.com",
-    messagingSenderId: "637029976092"
-  };
-  firebase.initializeApp(config);
+<body>
+  
+  Clock : <clock></clock><br>
+  
+  <script type="text/javascript" > 
+  var c = ducument.querySelector('clock');
+  
+  var pad = function(x){
+  
+  return x < 10 ? '0'+x : x;
+  
+  }
+  
+  var ShowClock = function(x){
+  var d = new Data();
+  var h = pad(d.getHours());
+  var m = pad(d.getMinutes());
+  var s = pad(d.getSeconds());
+  
+  c.innerHTML = [h,m,s].join(':');
+  
+  
+  }
+  
+  setInterval(ShowClock,1000);
+  </script>
+  </body>
 
-var commentsRef = firebase.database().ref().child('/');
-
-commentsRef.on('child_changed', function(data) {
-window.alert("sometext"+data.val());
-});  
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-        </script>
-    </head>
-    <body ng-app="firebaseApp">
-        <div ng-controller="firebaseCtrl">
-            <fieldset>
-                <legend>Test firebase</legend>
-                <ol id="blogs">
-                    <li></li>
-                </ol>
-            </fieldset>
-        </div>
-    </body>
 </html>
