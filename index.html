@@ -21,28 +21,20 @@
     messagingSenderId: "637029976092"
   };
   firebase.initializeApp(config);
-                    firebase.initializeApp(config);
-                    firebaseRef = firebase.database().ref("number");
-                }
-                // สร้าง Function เพื่อเก็บ event ของ Firebase
-                this.eventFirebase = function() {
-                    firebaseRef.on('value', function(data) {
-                        var elementOL = angular.element(document.getElementById('number'));
-                        console.log(data.val());
-                        const datas = data.val();
-                        elementOL.empty();
-                        angular.forEach(datas, function(post, index) {
-                            console.log(' title :' + post.title);
-                            elementOL.append('<li> number : ' + post.title+ '</li>');
-                        })
-                    })
-                }
-                this.push = function(title, content) {}
-            }).controller('firebaseCtrl', function(firebaseService) {
-                // เรียกใช้งาน firebaseService ที่เราสร้างไว้
-                firebaseService.initFirebase();
-                firebaseService.eventFirebase();
-            })
+
+var commentsRef = firebase.database().ref().child('test-firebase01');
+
+commentsRef.on('child_changed', function(data) {
+window.alert("sometext"+data.val());
+});  
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
         </script>
     </head>
     <body ng-app="firebaseApp">
