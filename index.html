@@ -22,7 +22,7 @@
   };
   firebase.initializeApp(config);
 
-var commentsRef = firebase.database().ref().child('test-firebase01');
+var commentsRef = firebase.database().ref().child('/');
 
 commentsRef.on('child_changed', function(data) {
 window.alert("sometext"+data.val());
